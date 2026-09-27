@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-lint-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build and test
+        run: mvn --batch-mode --no-transfer-progress verify
+
+      - name: Java lint
+        run: >-
+          mvn --batch-mode --no-transfer-progress
+          org.apache.maven.plugins:maven-checkstyle-plugin:3.6.0:check
+          -Dcheckstyle.config.location=google_checks.xml
+          -Dcheckstyle.failOnViolation=true
+
+      - name: Dependency vulnerability scan
+        run: >-
+          mvn --batch-mode --no-transfer-progress
+          org.owasp:dependency-check-maven:12.1.0:check
+          -DfailBuildOnCVSS=7
