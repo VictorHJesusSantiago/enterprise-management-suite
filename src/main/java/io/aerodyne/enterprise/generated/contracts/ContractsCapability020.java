@@ -1,0 +1,26 @@
+package io.aerodyne.enterprise.generated.contracts;
+
+public final class ContractsCapability020 {
+    public static final String MODULE = "contracts";
+    public static final String CODE = "CONTRACTS-020";
+    public static final String AREA = "Contract governance";
+
+    private ContractsCapability020() {
+    }
+
+    public static String module() {
+        return MODULE;
+    }
+
+    public static String code() {
+        return CODE;
+    }
+
+    public static String label() {
+        return AREA + " capability 020";
+    }
+
+    public static boolean requiresAudit() {
+        return false;
+    }
+}
