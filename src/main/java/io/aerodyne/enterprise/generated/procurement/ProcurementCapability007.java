@@ -1,0 +1,26 @@
+package io.aerodyne.enterprise.generated.procurement;
+
+public final class ProcurementCapability007 {
+    public static final String MODULE = "procurement";
+    public static final String CODE = "PROCUREMENT-007";
+    public static final String AREA = "Procurement sourcing";
+
+    private ProcurementCapability007() {
+    }
+
+    public static String module() {
+        return MODULE;
+    }
+
+    public static String code() {
+        return CODE;
+    }
+
+    public static String label() {
+        return AREA + " capability 007";
+    }
+
+    public static boolean requiresAudit() {
+        return false;
+    }
+}
