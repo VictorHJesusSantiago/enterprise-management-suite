@@ -1,0 +1,26 @@
+package io.aerodyne.enterprise.generated.logistics;
+
+public final class LogisticsCapability016 {
+    public static final String MODULE = "logistics";
+    public static final String CODE = "LOGISTICS-016";
+    public static final String AREA = "Logistics execution";
+
+    private LogisticsCapability016() {
+    }
+
+    public static String module() {
+        return MODULE;
+    }
+
+    public static String code() {
+        return CODE;
+    }
+
+    public static String label() {
+        return AREA + " capability 016";
+    }
+
+    public static boolean requiresAudit() {
+        return false;
+    }
+}
