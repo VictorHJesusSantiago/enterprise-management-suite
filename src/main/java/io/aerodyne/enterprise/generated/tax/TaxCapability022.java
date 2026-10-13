@@ -1,0 +1,26 @@
+package io.aerodyne.enterprise.generated.tax;
+
+public final class TaxCapability022 {
+    public static final String MODULE = "tax";
+    public static final String CODE = "TAX-022";
+    public static final String AREA = "Tax compliance";
+
+    private TaxCapability022() {
+    }
+
+    public static String module() {
+        return MODULE;
+    }
+
+    public static String code() {
+        return CODE;
+    }
+
+    public static String label() {
+        return AREA + " capability 022";
+    }
+
+    public static boolean requiresAudit() {
+        return false;
+    }
+}
